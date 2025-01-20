@@ -1,0 +1,463 @@
+body {
+    background-color: #f5f5f5;
+}
+
+/* Sekmeler */
+.nav-tabs {
+    border-bottom: 2px solid #0083b0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.nav-tabs .nav-link {
+    color: #666;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.nav-tabs .nav-link:hover {
+    border: none;
+    color: #0083b0;
+}
+
+.nav-tabs .nav-link.active {
+    color: #0083b0;
+    border: none;
+    border-bottom: 3px solid #0083b0;
+    font-weight: bold;
+}
+
+/* Ana hava durumu kartı */
+.current-weather {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.city-name {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.current-temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.weather-icon {
+    width: 128px;
+    height: 128px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.temp {
+    font-size: 3.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.weather-desc {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.weather-desc i {
+    margin-right: 0.5rem;
+    font-size: 1.6rem;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail i {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Ek hava durumu detayları */
+.weather-extra-details {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+}
+
+.weather-extra-details .detail {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.8rem;
+    border-radius: 10px;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+}
+
+.weather-extra-details .detail i {
+    font-size: 1.1rem;
+}
+
+/* Tahmin kartları */
+.forecast-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.forecast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-date {
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    color: #2D3748;
+}
+
+.forecast-icon-container {
+    position: relative;
+    display: inline-block;
+    margin: 0.5rem 0;
+}
+
+.forecast-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0.5rem auto;
+}
+
+.forecast-icon-container i {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    background: white;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-temp {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2D3748;
+}
+
+.forecast-desc {
+    color: #4A5568;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.forecast-details {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid #E2E8F0;
+    padding-top: 0.8rem;
+}
+
+.forecast-details .detail {
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.forecast-details .detail i {
+    color: #718096;
+}
+
+.forecast-details .detail span {
+    font-size: 0.9rem;
+    color: #4A5568;
+}
+
+/* Harita konteynerları */
+.map-container {
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container-large {
+    height: 600px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Kart başlıkları */
+.card-header h5 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-header i {
+    color: #0083b0;
+}
+
+/* Hava Kalitesi */
+.air-quality-index {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: white;
+    border-radius: 10px;
+}
+
+.aqi-value {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.pollutants {
+    padding: 2rem;
+}
+
+.pollutant-list {
+    margin-top: 1rem;
+}
+
+/* Sağlık ve Aktiviteler */
+.health-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.health-card h4 {
+    color: #0083b0;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* MinuteCast */
+#minutecast-container {
+    padding: 1rem;
+}
+
+#minutecast-timeline {
+    margin-top: 2rem;
+    height: 200px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+/* Aylık takvim */
+#monthly-calendar {
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    min-height: 500px;
+}
+
+/* Timeline */
+.timeline-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 2rem 0;
+    gap: 1rem;
+    align-items: flex-end;
+    min-height: 200px;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.precipitation-bar {
+    width: 30px;
+    background: linear-gradient(to top, #4299E1, #63B3ED);
+    border-radius: 4px;
+    position: relative;
+    min-height: 4px;
+}
+
+.precipitation-value {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.time {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #4A5568;
+}
+
+/* Radar kontrolleri */
+.radar-controls {
+    text-align: center;
+    padding: 1rem;
+}
+
+.radar-controls .btn-group {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.radar-controls .btn {
+    padding: 0.5rem 1rem;
+}
+
+/* Sağlık kartları */
+.score-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.score-value {
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Hava kalitesi */
+.pollutant-item {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.progress {
+    height: 0.5rem;
+    border-radius: 1rem;
+}
+
+/* Ek detaylar */
+.additional-details {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.8rem;
+}
+
+.additional-details .detail {
+    margin-bottom: 0.5rem;
+}
+
+.additional-details .detail:last-child {
+    margin-bottom: 0;
+}
+
+.search-group {
+    border-bottom: 1px solid #eee;
+    padding: 8px 0;
+}
+
+.search-group:last-child {
+    border-bottom: none;
+}
+
+.search-group-title {
+    font-size: 0.8rem;
+    color: #666;
+    padding: 4px 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.search-result {
+    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.search-result:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.search-result i {
+    width: 20px;
+    text-align: center;
+}
+
+.search-result.city {
+    font-weight: 500;
+    color: #0083b0;
+}
+
+.search-result.district {
+    padding-left: 2rem;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.search-result.world-city {
+    font-weight: 500;
+    color: #2c5282;
+}
+
+#searchResults {
+    max-height: 400px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #0083b0 #f0f0f0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-top: 4px;
+    background-color: white;
+}
+
+#searchResults::-webkit-scrollbar {
+    width: 8px;
+}
+
+#searchResults::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+#searchResults::-webkit-scrollbar-thumb {
+    background: #0083b0;
+    border-radius: 4px;
+} 
